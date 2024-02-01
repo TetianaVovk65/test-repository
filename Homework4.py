@@ -19,10 +19,14 @@ else:
     print(f"{c} is max")"""
 
 # task3
-number = int(input("enter 3-digit number ="))
-firstNumber = (number // 100)
-middleNumber = number % 100 // 10
-lastNumber = number % 10
-print(f"{firstNumber} = First digit,{middleNumber}= Middle digit, {lastNumber} = Third digit")
-reserved_number = str(f"{lastNumber}{middleNumber}{firstNumber}")
-print(reserved_number)
+number = (input("enter 3-digit number ="))
+if number.isdigit() and len(number) == 3:
+    fine_number = int(number)
+    firstNumber = (fine_number // 100)
+    middleNumber = fine_number % 100 // 10
+    lastNumber = fine_number % 10
+    print(f"{firstNumber} = First digit,{middleNumber}= Middle digit, {lastNumber} = Third digit")
+    reserved_number = str(f"{lastNumber}{middleNumber}{firstNumber}")
+    print(reserved_number)
+else:
+    print('Error')
