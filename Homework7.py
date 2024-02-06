@@ -1,4 +1,4 @@
-"""# task1
+# task1
 numbers = []
 for i in range(5):
     number = input(f'Enter number {i} =')
@@ -29,7 +29,7 @@ for i in range(n):
 print(A)
 A.reverse()
 print(A)
-"""
+
 # task5
 A = []
 for i in range(5):
@@ -39,8 +39,9 @@ print(A)
 C = []
 for c in A:
     if c.isdigit():
-        if c > 5:
-            C.append(c)
+        if 5 > int(c):
+            continue
+        C.append(c)
 print(C)
 
 # task6
@@ -50,5 +51,30 @@ for i in range(n):
     number = input(f'Enter number {i} =')
     A.append(number)
 print(A)
+
+a_min = A[0]
+for j in range(n):
+    if A[j] < a_min:
+        a_min = A[j]
+print(f"min = {a_min}")
+
+a_max = A[0]
+for j in range(n):
+    if A[j] > a_max:
+        a_max = A[j]
+print(f"max = {a_max}")
+
 #task7
+text = input("write text")
+digit_counter = 0
+for i in text:
+    if i.isdigit():
+        digit_counter += 1
+if digit_counter != 0:
+    print(digit_counter)
+else:
+    print("No numbers in the text")
+
+
+
 
