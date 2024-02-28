@@ -34,25 +34,38 @@ class ObjPage:
     def submit(self):
         self.driver.find_element(By.XPATH, self.Submit).click
 
+    def find_result_name(self):
+        self.driver.find_element(By.ID, 'name').text
+        return self
+
+    def find_result_email(self):
+        self.driver.find_element(By.ID, 'email').text
+        return self
+
+    def find_result_current_address(self):
+        self.driver.find_element(By.CSS_SELECTOR, 'p[id=currentAddress]').text
+        return self
+
+    def find_result_permanent_address(self):
+        self.driver.find_element(By.CSS_SELECTOR, 'p[id=permanentAddress]').text
+        return self
+
 
 def test_text_boxes1(chrome):
     page = ObjPage(chrome)
-    page.open_page().fill_name("Ivan").fill_email("test@com.com").fill_current_address("Shevchenka str.").fill_permanent_address("Osvytska str.").submit
-
+    page.open_page().fill_name("Ivan").fill_email("test@com.com").fill_current_address(
+        "Shevchenka str.").fill_permanent_address("Osvytska str.").submit
     pass
-    # name = driver.find_element(By.XPATH, FullName_field)
-    # email = driver.find_element(By.XPATH, Email_field)
-    # current_address = driver.find_element(By.XPATH, Current_address_field)
-    # permanent_address = driver.find_element(By.XPATH, Permanent_address_field)
-    # submit = driver.find_element(By.XPATH, Submit)
-    #
-    # name.send_keys("Tetiana Vovk")
-    # email.send_keys("test@ua.com")
-    # current_address.send_keys("Shevchenka str.")
-    # permanent_address.send_keys("Pulyia str.")
-    # submit.click()
-    #
-    # result_name = driver.find_element(By.ID, 'name').text
+
+
+# def test_find_result(chrome):
+#     page = ObjPage(chrome)
+#     page.open_page().find_result_name().find_result_email().find_result_current_address().find_result_permanent_address()
+#     pass
+
     # result_email = driver.find_element(By.ID, 'email').text
     # result_current_address = driver.find_element(By.CSS_SELECTOR, 'p[id=currentAddress]').text
     # result_permanent_address = driver.find_element(By.CSS_SELECTOR, 'p[id=permanentAddress]').text
+
+
+
